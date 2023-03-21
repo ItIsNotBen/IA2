@@ -1,8 +1,6 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Random;
+
+
 
 public class Player {
     private String name;
@@ -17,7 +15,7 @@ public class Player {
         this.name = name;
         points = 0;
         grid = new char[10][10];
-        createGrid();
+        // createGrid();
         hand = new ArrayList();
         selectedTile = ' ';
     }
@@ -47,10 +45,18 @@ public class Player {
         hand.remove(Character.valueOf(tile));
     }
 
-    public void createGrid() {
-        for (int i)
-    }
+//    public void createGrid() {
+//        for (int i)
+//    }
     public void assignTiles(char[] tiles) {
+        hand.add(tiles);
 
     }
-}
+
+    public void displayTiles() {
+        for (int i = 0; i < hand.size(); i++) {
+            System.out.println(hand.get(i));
+        }
+    }
+
+    }
