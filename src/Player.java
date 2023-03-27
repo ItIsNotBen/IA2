@@ -15,7 +15,7 @@ public class Player {
         this.name = name;
         points = 0;
         grid = new char[10][10];
-        // createGrid();
+        initGrid();
         hand = new ArrayList();
         selectedTile = ' ';
     }
@@ -45,18 +45,34 @@ public class Player {
         hand.remove(Character.valueOf(tile));
     }
 
-//    public void createGrid() {
-//        for (int i)
-//    }
-    public void assignTiles(char[] tiles) {
-        hand.add(tiles);
+    private void initGrid() {
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
 
-    }
+                grid[i][j] = ' ';
+            }
+        }
+
+        public void assignTiles(char[] tiles) {
+            for (int i = 0; i < tiles.length; i++) {
+                hand.add(tiles[i]);
+            }
+        }
+
+        public void assignTile(char tile) {
+            hand.add(tile);
+        }
 
     public void displayTiles() {
         for (int i = 0; i < hand.size(); i++) {
             System.out.println(hand.get(i));
         }
     }
+
+        public void findWords() {
+            for(int i = 0; i < grid.length; i++) {
+
+            }
+        }
 
     }
